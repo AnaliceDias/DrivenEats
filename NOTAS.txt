@@ -4,10 +4,7 @@
 [OK] commit para correção automática
 [OK] faltou adicionar a bolinha verde
 [OK] função de selecionar => commit de seleção de itens (coletar o preço de cada opção)
+[OK] substituir botão qnd 3 opções forem escolhidas => commit botão de finalizar pedido [1h]
 
-substituir botão qnd 3 opções forem escolhidas => commit botão de finalizar pedido [1h]
+envio do pedido pelo whatsapp => commit de envio do pedido
 
-envio do pedido pelo whatsapp => commit de envio do pedido [45]
-
-===============================================
-Problema atual:

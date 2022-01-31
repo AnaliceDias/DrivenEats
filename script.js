@@ -1,6 +1,8 @@
 let custosDasCompras = [];
 let custoTotal =0;
 let habilitarPedido = [false,false,false];
+let opcoesEscolhidas = []; //para guardar o nome dos pedidos
+let mensagemDoPedido = "";
 
 function selecionarPrato (opcao){
     let anteriorSelecionado = document.querySelector("section.pratos .selecionado");
@@ -94,5 +96,20 @@ function verificarHabilitacaoDoPedido(){
         botaoFecharPedido.classList.remove("invisivel");
     }
     
+}
+
+function mensagemPedido (){
+    let numCustosDasCompras = 0;
+    for(let i=0; i< custosDasCompras.length; i++){
+        custoTotal+=custosDasCompras[i];
+    }
+    custoTotal = numCustosDasCompras[0]+numCustosDasCompras[1]+numCustosDasCompras[2];
+    mensagemDoPedido = `Olá, gostaria de fazer o pedido:
+    - Prato: Frango Yin Yang
+    - Bebida: Coquinha Gelada
+    - Sobremesa: Pudim
+    Total: R$ ${custoTotal}`
+
+    console.log(custoTotal);
 }
 
