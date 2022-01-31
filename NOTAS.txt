@@ -1,22 +1,17 @@
 	#Checklist
 [OK] Criar repositório
 [OK] layout (commit do layout)
-commit para correção automática
+[OK] commit para correção automática
+[OK] faltou adicionar a bolinha verde
 
-adicionar o preço pelo js Array de objetos {reais: centavos} // Lembrar de incluir R$ e "," no innerHTML
+adicionar o preço pelo js | Array de objetos {reais: centavos} // Lembrar de incluir R$ e "," no innerHTML
 função de selecionar => commit de seleção de itens
 
 substituir botão qnd 3 opções forem escolhidas => commit botão de finalizar pedido
 
 envio do pedido pelo whatsapp => commit de envio do pedido
 
-
-
-==============================
-	#ESTILO
-[OK] Fontes
-
-
+===============================================
 Problema atual:
 
 

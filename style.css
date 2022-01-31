@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+.invisivel {
+    display: none;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #EEEEEE;
@@ -75,6 +79,8 @@ section div.opcoes div.opcao {
     justify-content: center;
     align-items: center;
 
+    position: relative;
+
     width: 172px;
     min-width: 172px;
     height: 216px;
@@ -125,8 +131,6 @@ section div.opcoes div.opcao .descricao{
     font-size: 15px;
     line-height: 18px;
     color:#A6A6A6;
-
-    background-color: yellow;
     
 }
 
@@ -175,17 +179,26 @@ footer button.selecione3{
 }
 
 footer button.fecharPedido {
-    display: none;
 
-background: #32B72F;
+    background: #32B72F;
 
-font-weight: bold;
-font-size: 20px;
-line-height: 23px;
-text-align: center;
-color: #FFFFFF;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
 }
 
 .selecionado {
     border: 5px solid #32B72F;
+}
+
+.selecionadoSticky {
+    position: absolute;
+    z-index: 2;
+    bottom: 12px;
+    right: 15px;
+
+    font-size: 20px;
+    color:#32B72F;
 }
