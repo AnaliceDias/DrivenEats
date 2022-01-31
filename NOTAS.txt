@@ -3,13 +3,11 @@
 [OK] layout (commit do layout)
 [OK] commit para correção automática
 [OK] faltou adicionar a bolinha verde
+[OK] função de selecionar => commit de seleção de itens (coletar o preço de cada opção)
 
-adicionar o preço pelo js | Array de objetos {reais: centavos} // Lembrar de incluir R$ e "," no innerHTML
-função de selecionar => commit de seleção de itens
+substituir botão qnd 3 opções forem escolhidas => commit botão de finalizar pedido [1h]
 
-substituir botão qnd 3 opções forem escolhidas => commit botão de finalizar pedido
-
-envio do pedido pelo whatsapp => commit de envio do pedido
+envio do pedido pelo whatsapp => commit de envio do pedido [45]
 
 ===============================================
 Problema atual:
