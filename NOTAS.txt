@@ -11,7 +11,3 @@ envio do pedido pelo whatsapp => commit de envio do pedido [45]
 
 ===============================================
 Problema atual:
-
-
-Confirmar com vini
-Espaçamento vertical entre os elementos dentro de cada opção (no figma cada categoria tem uma altura diferente)

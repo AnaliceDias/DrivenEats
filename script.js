@@ -1,7 +1,21 @@
 let custosDasCompras = [];
 let custoTotal =0;
+let habilitarPedido = [false,false,false];
 
 function selecionarPrato (opcao){
+    let anteriorSelecionado = document.querySelector("section.pratos .selecionado");
+    let ionIcon ;
+    
+    if(anteriorSelecionado!=null){
+        ionIcon = anteriorSelecionado.querySelector(".selecionadoSticky");
+        anteriorSelecionado.classList.remove("selecionado");
+        ionIcon.classList.add("invisivel");
+    }
+
+    opcao.classList.add("selecionado");
+    ionIcon = opcao.querySelector(".selecionadoSticky");
+    ionIcon.classList.remove("invisivel");
+
     let reais = opcao.querySelector(".reais");
     let strReais = reais.innerHTML;
     let numReais = parseInt(strReais);
@@ -10,11 +24,26 @@ function selecionarPrato (opcao){
     strCentavos="0."+ strCentavos;
     let numCentavos = parseFloat(strCentavos);
     custosDasCompras[0]= (numReais+numCentavos).toFixed(2);
+    habilitarPedido[0]=true;
+
+    verificarHabilitacaoDoPedido();
     
-    console.log(custosDasCompras[0]);
 }
 
 function selecionarBebida (opcao){
+    let anteriorSelecionado = document.querySelector("section.bebidas .selecionado");
+    let ionIcon ;
+    
+    if(anteriorSelecionado!=null){
+        ionIcon = anteriorSelecionado.querySelector(".selecionadoSticky");
+        anteriorSelecionado.classList.remove("selecionado");
+        ionIcon.classList.add("invisivel");
+    }
+
+    opcao.classList.add("selecionado");
+    ionIcon = opcao.querySelector(".selecionadoSticky");
+    ionIcon.classList.remove("invisivel");
+
     let reais = opcao.querySelector(".reais");
     let strReais = reais.innerHTML;
     let numReais = parseInt(strReais);
@@ -23,11 +52,25 @@ function selecionarBebida (opcao){
     strCentavos="0."+ strCentavos;
     let numCentavos = parseFloat(strCentavos);
     custosDasCompras[1]= (numReais+numCentavos).toFixed(2);
-    
-    console.log(custosDasCompras[1]);
+    habilitarPedido[1]=true;
+
+    verificarHabilitacaoDoPedido();
 }
 
 function selecionarSobremesa (opcao){
+    let anteriorSelecionado = document.querySelector("section.sobremesas .selecionado");
+    let ionIcon ;
+    
+    if(anteriorSelecionado!=null){
+        ionIcon = anteriorSelecionado.querySelector(".selecionadoSticky");
+        anteriorSelecionado.classList.remove("selecionado");
+        ionIcon.classList.add("invisivel");
+    }
+
+    opcao.classList.add("selecionado");
+    ionIcon = opcao.querySelector(".selecionadoSticky");
+    ionIcon.classList.remove("invisivel");
+
     let reais = opcao.querySelector(".reais");
     let strReais = reais.innerHTML;
     let numReais = parseInt(strReais);
@@ -36,7 +79,20 @@ function selecionarSobremesa (opcao){
     strCentavos="0."+ strCentavos;
     let numCentavos = parseFloat(strCentavos);
     custosDasCompras[2]= (numReais+numCentavos).toFixed(2);
+    habilitarPedido[2]=true;
+
+    verificarHabilitacaoDoPedido();    
+}
+
+function verificarHabilitacaoDoPedido(){
     
-    console.log(custosDasCompras[2]);
+    if(habilitarPedido[0]===true && habilitarPedido[1]===true && habilitarPedido[2]===true ){
+        let botaoSelecione3 = document.querySelector("footer .selecione3");
+        let botaoFecharPedido= document.querySelector("footer .fecharPedido");
+
+        botaoSelecione3.classList.add("invisivel");
+        botaoFecharPedido.classList.remove("invisivel");
+    }
+    
 }
 
