@@ -99,9 +99,11 @@ function verificarHabilitacaoDoPedido(){
 }
 
 function mensagemPedido (){
-    let numCustosDasCompras = 0;
+    let numCustosDasCompras = [];
     for(let i=0; i< custosDasCompras.length; i++){
-        custoTotal+=custosDasCompras[i];
+        numCustosDasCompras[i]=(parseFloat(custosDasCompras[i]));
+        numCustosDasCompras[i].toFixed(2);
+        
     }
     custoTotal = numCustosDasCompras[0]+numCustosDasCompras[1]+numCustosDasCompras[2];
     mensagemDoPedido = `Olá, gostaria de fazer o pedido:
@@ -110,6 +112,5 @@ function mensagemPedido (){
     - Sobremesa: Pudim
     Total: R$ ${custoTotal}`
 
-    console.log(custoTotal);
 }
 
