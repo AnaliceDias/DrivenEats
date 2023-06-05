@@ -1,3 +1,7 @@
+<p align="center" >
+  <img width="250" src="drivenEats.png"> 
+</p>
+
 DrivenEats foi um dos meus primeiros projetos de desenvolvimento web.
 É um projetinho bem simples que simula o front-end de um aplicativo de delivery de comida.
 
