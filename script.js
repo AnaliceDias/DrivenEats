@@ -1,7 +1,8 @@
 let custoTotal =0;
 let habilitarPedido = [false,false,false];
 let mensagemDoPedido = "";
-let caminhoMensagem = "https://api.whatsapp.com/send?phone=5583999999999"
+let telefone = "5583999999999"
+let caminhoMensagem = `https://api.whatsapp.com/send?phone=${telefone}`
 let prato = {nome: "", preco: 0};
 let bebida = {nome: "", preco: 0};
 let sobremesa = {nome: "", preco: 0};
