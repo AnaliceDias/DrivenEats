@@ -1,12 +1,15 @@
-let custosDasCompras = [];
 let custoTotal =0;
 let habilitarPedido = [false,false,false];
-let opcoesEscolhidas = []; //para guardar o nome dos pedidos
 let mensagemDoPedido = "";
+let caminhoMensagem = "https://api.whatsapp.com/send?phone=5583999999999"
+let prato = {nome: "", preco: 0};
+let bebida = {nome: "", preco: 0};
+let sobremesa = {nome: "", preco: 0};
 
 function selecionarPrato (opcao){
     let anteriorSelecionado = document.querySelector("section.pratos .selecionado");
     let ionIcon ;
+    let nomeOpcao = opcao.querySelector(".nome").innerHTML;
     
     if(anteriorSelecionado!=null){
         ionIcon = anteriorSelecionado.querySelector(".selecionadoSticky");
@@ -18,16 +21,10 @@ function selecionarPrato (opcao){
     ionIcon = opcao.querySelector(".selecionadoSticky");
     ionIcon.classList.remove("invisivel");
 
-    let reais = opcao.querySelector(".reais");
-    let strReais = reais.innerHTML;
-    let numReais = parseInt(strReais);
-    let centavos = opcao.querySelector(".centavos");
-    let strCentavos = centavos.innerHTML;
-    strCentavos="0."+ strCentavos;
-    let numCentavos = parseFloat(strCentavos);
-    custosDasCompras[0]= (numReais+numCentavos).toFixed(2);
-    habilitarPedido[0]=true;
+    let preco = precoDoItem(opcao);
+    mensagemPedido("prato", nomeOpcao, preco )
 
+    habilitarPedido[0]=true;
     verificarHabilitacaoDoPedido();
     
 }
@@ -35,6 +32,7 @@ function selecionarPrato (opcao){
 function selecionarBebida (opcao){
     let anteriorSelecionado = document.querySelector("section.bebidas .selecionado");
     let ionIcon ;
+    let nomeOpcao = opcao.querySelector(".nome").innerHTML;
     
     if(anteriorSelecionado!=null){
         ionIcon = anteriorSelecionado.querySelector(".selecionadoSticky");
@@ -46,23 +44,18 @@ function selecionarBebida (opcao){
     ionIcon = opcao.querySelector(".selecionadoSticky");
     ionIcon.classList.remove("invisivel");
 
-    let reais = opcao.querySelector(".reais");
-    let strReais = reais.innerHTML;
-    let numReais = parseInt(strReais);
-    let centavos = opcao.querySelector(".centavos");
-    let strCentavos = centavos.innerHTML;
-    strCentavos="0."+ strCentavos;
-    let numCentavos = parseFloat(strCentavos);
-    custosDasCompras[1]= (numReais+numCentavos).toFixed(2);
-    habilitarPedido[1]=true;
+    let preco = precoDoItem(opcao);
+    mensagemPedido("bebida", nomeOpcao, preco );
 
+    habilitarPedido[1]=true;
     verificarHabilitacaoDoPedido();
 }
 
 function selecionarSobremesa (opcao){
     let anteriorSelecionado = document.querySelector("section.sobremesas .selecionado");
     let ionIcon ;
-    
+    let nomeOpcao = opcao.querySelector(".nome").innerHTML;
+
     if(anteriorSelecionado!=null){
         ionIcon = anteriorSelecionado.querySelector(".selecionadoSticky");
         anteriorSelecionado.classList.remove("selecionado");
@@ -73,16 +66,10 @@ function selecionarSobremesa (opcao){
     ionIcon = opcao.querySelector(".selecionadoSticky");
     ionIcon.classList.remove("invisivel");
 
-    let reais = opcao.querySelector(".reais");
-    let strReais = reais.innerHTML;
-    let numReais = parseInt(strReais);
-    let centavos = opcao.querySelector(".centavos");
-    let strCentavos = centavos.innerHTML;
-    strCentavos="0."+ strCentavos;
-    let numCentavos = parseFloat(strCentavos);
-    custosDasCompras[2]= (numReais+numCentavos).toFixed(2);
-    habilitarPedido[2]=true;
+    let preco = precoDoItem(opcao);
+    mensagemPedido("sobremesa", nomeOpcao, preco )
 
+    habilitarPedido[2]=true;
     verificarHabilitacaoDoPedido();    
 }
 
@@ -98,19 +85,35 @@ function verificarHabilitacaoDoPedido(){
     
 }
 
-function mensagemPedido (){
-    let numCustosDasCompras = [];
-    for(let i=0; i< custosDasCompras.length; i++){
-        numCustosDasCompras[i]=(parseFloat(custosDasCompras[i]));
-        numCustosDasCompras[i].toFixed(2);
-        
+function mensagemPedido (opcao, nomeDaOpcao, precoDaOpcao){
+
+    if(opcao === "prato"){
+        prato.nome = nomeDaOpcao.replace(" ", "%20") + "%0A%20%20%20%20";
+        prato.preco = parseFloat(precoDaOpcao);
+    } else if (opcao === "bebida") {
+        bebida.nome = nomeDaOpcao.replace(" ", "%20") + "%0A%20%20%20%20";
+        bebida.preco = parseFloat(precoDaOpcao);
+    }else{
+        sobremesa.nome = nomeDaOpcao.replace(" ", "%20") + "%0A%20%20%20%20";
+        sobremesa.preco = parseFloat(precoDaOpcao);
     }
-    custoTotal = numCustosDasCompras[0]+numCustosDasCompras[1]+numCustosDasCompras[2];
-    mensagemDoPedido = `Olá, gostaria de fazer o pedido:
-    - Prato: Frango Yin Yang
-    - Bebida: Coquinha Gelada
-    - Sobremesa: Pudim
-    Total: R$ ${custoTotal}`
+    custoTotal = (prato.preco + bebida.preco + sobremesa.preco).toFixed(2);
+    
+    mensagemDoPedido = caminhoMensagem + `&text=Ol%C3%A1,%20gostaria%20de%20fazer%20o%20pedido:%0A%20%20%20%20-%20Prato:%20${prato.nome}%0A%20%20%20%20-%20Bebida:%20${bebida.nome}%0A%20%20%20%20-%20Sobremesa:%20${sobremesa.nome}%0A%20%20%20%20Total:%20R$%20 ${custoTotal}`;
 
 }
 
+function precoDoItem(opcao){
+    let strReais = opcao.querySelector(".reais").innerHTML;
+    let numReais = parseInt(strReais);
+    let strCentavos = opcao.querySelector(".centavos").innerHTML;
+    strCentavos="0."+ strCentavos;
+    let numCentavos = parseFloat(strCentavos);
+
+    let preco = (numReais+numCentavos).toFixed(2);
+    return preco;
+}
+
+function finalizarPedido() {
+    return mensagemDoPedido;
+}

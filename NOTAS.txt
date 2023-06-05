@@ -8,3 +8,5 @@
 
 envio do pedido pelo whatsapp => commit de envio do pedido
 
+espaço %20
+
