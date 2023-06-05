@@ -26,7 +26,7 @@
                 <div class="opcao " data-identifier="food-option" onclick="selecionarPrato(this)" >
                     <div class="conteudo">
                         <img src="imagens/frango.png">
-                        <h4 data-identifier="food-title">Frango Yin Yang</h4>
+                        <h4 class = "nome">Frango</h4>
                         <span class="descricao">Um pouco de batata, um pouco de salada</span>
                         <span class="preco" data-identifier="food-price">
                             <p class="rCifrao">R$</p>
@@ -42,7 +42,7 @@
                 <div class="opcao" data-identifier="food-option" onclick="selecionarPrato(this)">
                     <div class="conteudo">
                         <img src="imagens/frango.png">
-                        <h4 data-identifier="food-title">Frango Yin Yang</h4>
+                        <h4 class = "nome">Frango Yin</h4>
                         <span class="descricao">Um pouco de batata, um pouco de salada</span>
                         <span class="preco" data-identifier="food-price">
                             <p class="rCifrao">R$</p>
@@ -58,7 +58,7 @@
                 <div class="opcao" data-identifier="food-option" onclick="selecionarPrato(this)">
                     <div class="conteudo">
                         <img src="imagens/frango.png">
-                        <h4 data-identifier="food-title">Frango Yin Yang</h4>
+                        <h4 class = "nome">Frango Yin Yang</h4>
                         <span class="descricao">Um pouco de batata, um pouco de salada</span>
                         <span class="preco" data-identifier="food-price">
                             <p class="rCifrao">R$</p>
@@ -79,7 +79,7 @@
                 <div class="opcao" data-identifier="food-option" onclick="selecionarBebida(this)">
                     <div class="conteudo">
                         <img src="imagens/coquinha_gelada.png">
-                        <h4 data-identifier="food-title">Coquinha gelada</h4>
+                        <h4 class = "nome">Coquinha</h4>
                         <span class="descricao">Lata 350ml</span>
                         <span class="preco" data-identifier="food-price">
                             <p class="rCifrao">R$</p>
@@ -95,7 +95,7 @@
                 <div class="opcao" data-identifier="food-option" onclick="selecionarBebida(this)">
                     <div class="conteudo">
                         <img src="imagens/coquinha_gelada.png">
-                        <h4 data-identifier="food-title">Coquinha gelada</h4>
+                        <h4 class = "nome">Coquinha gelada</h4>
                         <span class="descricao">Lata 350ml</span>
                         <span class="preco" data-identifier="food-price">
                             <p class="rCifrao">R$</p>
@@ -111,7 +111,7 @@
                 <div class="opcao" data-identifier="food-option" onclick="selecionarBebida(this)">
                     <div class="conteudo">
                         <img src="imagens/coquinha_gelada.png">
-                        <h4 data-identifier="food-title">Coquinha gelada</h4>
+                        <h4 class = "nome">Coquinha mais gelada</h4>
                         <span class="descricao">Lata 350ml</span>
                         <span class="preco" data-identifier="food-price">
                             <p class="rCifrao">R$</p>
@@ -132,7 +132,7 @@
                 <div class="opcao" data-identifier="food-option" onclick="selecionarSobremesa(this)">
                     <div class="conteudo">
                         <img src="imagens/pudim.png">
-                        <h4 data-identifier="food-title">Pudim</h4>
+                        <h4 class = "nome" >Pudim</h4>
                         <span class="descricao">Apenas pudim</span>
                         <span class="preco" data-identifier="food-price">
                             <p class="rCifrao">R$</p>
@@ -145,10 +145,10 @@
                     <ion-icon name="checkmark-circle" class="selecionadoSticky invisivel"></ion-icon>
                 </div>
 
-                <div class="opcao" data-identifier="food-option" onclick="selecionarSobremesa(this)">
+                <div class="opcao" data-identifier="food-option" onclick="selecionarSobremesa(this)" >
                     <div class="conteudo">
                         <img src="imagens/pudim.png">
-                        <h4 data-identifier="food-title">Pudim</h4>
+                        <h4 class = "nome">Pudim de leite</h4>
                         <span class="descricao">Apenas pudim</span>
                         <span class="preco" data-identifier="food-price">
                             <p class="rCifrao">R$</p>
@@ -164,7 +164,7 @@
                 <div class="opcao" data-identifier="food-option" onclick="selecionarSobremesa(this)">
                     <div class="conteudo">
                         <img src="imagens/pudim.png">
-                        <h4 data-identifier="food-title">Pudim</h4>
+                        <h4 class = "nome">Pudim de matcha</h4>
                         <span class="descricao">Apenas pudim</span>
                         <span class="preco" data-identifier="food-price">
                             <p class="rCifrao">R$</p>
@@ -179,10 +179,10 @@
             </div>
         </section>
     </main>
-
+    <!--  -->
     <footer>
         <button class="selecione3">Selecione os 3 itens para fechar o pedido</button>
-        <a href="https://wa.me/5583999801542" onclick="mensagemPedido()"><button class="fecharPedido invisivel">Fechar pedido</button></a>
+        <a href= "#" onclick="location.href=finalizarPedido()"><button class="fecharPedido invisivel">Fechar pedido</button></a>
     </footer>
     
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
