@@ -2,8 +2,7 @@
   <img width="250" src="drivenEats.png"> 
 </p>
 
-DrivenEats foi um dos meus primeiros projetos de desenvolvimento web.
-É um projetinho bem simples que simula o front-end de um aplicativo de delivery de comida.
+DrivenEats é um projeto que reproduz a interface de um aplicativo de delivery de comida.
 
 Suas principais funções são:
 - Exibir um cardápio (um pouco limitado, é verdade hahaha) com opções de prato, bebida e sobremesa.
